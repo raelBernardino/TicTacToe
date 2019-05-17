@@ -50,19 +50,21 @@ class App extends Component {
   _playerTurn(i) {
     let player = this.state.player
     const board = this.state.board
+    if (board[i] === '') {
+      board[i] = player
+    } else {
+      return
+    }
     if (player === 'x') {
       player = 'o'
     } else {
       player = 'x'
     }
-    this.setState({ board, player })
-    if (board[i] === '') {
-      board[i] = player
-    }
     this._checkWinner()
+    this.setState({ board, player })
   }
 
-    _checkWinner() {
+  _checkWinner() {
     const board = this.state.board
     let winnerStatus = this.state.winnerStatus
     let winnerFound = this.state.winnerFound
@@ -82,20 +84,19 @@ class App extends Component {
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
           winnerFound = !winnerFound
           winnerStatus = `${this.state.player} wins!`
-          if (board.indexOf('') < 0) {
-            winnerStatus = 'Draw!'
-            winnerFound = !winnerFound
-          }
         }
       }
+    }
+    if (!winnerFound && board.indexOf('') < 0) {
+      winnerFound = !winnerFound
+      winnerStatus = 'Draw!'
     }
     this.setState({ winnerFound, winnerStatus })
   }
 
   _reset() {
-    this.setState({board: Array(9).fill(''), winnerFound: !this.state.winnerFound, player: 'x'})
+    this.setState({ board: Array(9).fill(''), winnerFound: !this.state.winnerFound, player: 'x' })
   }
-
 
   render() {
     return (
@@ -106,7 +107,6 @@ class App extends Component {
               winnerStatus={this.state.winnerStatus}
               xWin={this.state.xWin}
               oWin={this.state.oWin}
-
               reset={this._reset}
             />
             : null

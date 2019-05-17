@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { GameBoard, Row, Square, } from './components/StyledComponents'
+import styled from 'styled-components'
 import './App.css'
 
 class App extends Component {
@@ -13,22 +14,36 @@ class App extends Component {
         '', '', ''
       ]
     }
-    this._playerTurn = this._playerTurn.bind(this)
     this._renderSquare = this._renderSquare.bind(this)
   }
-  _playerTurn() {
+
+  _checkWinner() {
+    const board = this.state.board
+  }
+
+  _renderSquare(i) {
+    return (
+      <Square onClick={() => this._playerTurn(i)}>{this.state.board[i]}</Square>
+    )
+  }
+
+
+  _playerTurn(i) {
     let player = this.state.player
-    if (player === 'x') {
+    const board = this.state.board
+    if(player === 'x') {
       player = 'o'
     } else {
       player = 'x'
     }
-    this.setState({ player })
-  }
 
-  _renderSquare(i) {
-    console.log(this.state.board[i])
-    return <Square value={this.state.board[i]} />
+    if(board[i] === '') {
+      board[i] = player
+    } else {
+      return
+    }
+
+    this.setState({ board, player })
   }
 
   render() {

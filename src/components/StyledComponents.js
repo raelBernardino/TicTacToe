@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 
 const Square = styled.button`
@@ -7,14 +8,14 @@ const Square = styled.button`
   height: 145px;
   padding: 10px;
   font-family: 'Yantramanav';
-  font-weight: 900;
-  font-size: 35px;
+  font-weight: 100;
+  font-size: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #F5FBEF;
   margin: 10px;
-  color: #06D6A0;
+  color: black;
   transition: .3s;
   &:hover{
     transition: .3s;
@@ -37,7 +38,7 @@ const GameBoard = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: #06D6A0;
+  background-color: #BD4F6C;
   justify-content: center;
   align-items: center;
 `

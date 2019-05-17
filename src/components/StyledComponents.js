@@ -4,22 +4,22 @@ import styled from 'styled-components'
 const Square = styled.button`
   border: none;
   outline: none;
-  width: 145px;
-  height: 145px;
+  width: 170px;
+  height: 170px;
   padding: 10px;
   font-family: 'Yantramanav';
-  font-weight: 100;
-  font-size: 60px;
+  font-weight: 900;
+  font-size: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F5FBEF;
-  margin: 10px;
-  color: black;
+  background-color: #333;
+  margin: 5px;
+  color: ${props => props.primary ? '#68EDC6' : '#EF626C'};
   transition: .3s;
   &:hover{
     transition: .3s;
-    background-color: #efffe0;
+    background-color: white;
     cursor: pointer;
   }
 `
@@ -33,14 +33,14 @@ const Row = styled.div`
   flex-direction: row;
 `
 
-const GameBoard = styled.div`
+const MainGameBoard = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-color: #BD4F6C;
+  background-color: #EFF6EE;
   justify-content: center;
   align-items: center;
 `
 
-export { Square, Row, GameBoard }
+export { Square, Row, MainGameBoard }

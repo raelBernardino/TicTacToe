@@ -26,11 +26,41 @@ const Square = styled.button`
 
 const Row = styled.div`
   display: flex;
-  width: 80%;
-  height: auto;
   align-items: center;
   justify-content: center;
   flex-direction: row;
+`
+
+const Button = styled.button`
+  background-color: #68EDC6;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 20px;
+  border-radius: 5px;
+  width: 220px;
+  font-size: 30px;
+  font-family: 'Yantramanav';
+  cursor: pointer;
+`
+
+const ArrowBack = styled.button`
+  position: absolute;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 100;
+  color: #EF626C;
+  opacity: .5;
+  top: 20px;
+  left: 20px;
+  transition: .3s;
+  &:hover {
+    opacity: 1;
+    transition: .3s;
+  }
 `
 
 const MainGameBoard = styled.div`
@@ -42,5 +72,21 @@ const MainGameBoard = styled.div`
   justify-content: center;
   align-items: center;
 `
+const Player = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`
 
-export { Square, Row, MainGameBoard }
+const PlayerName = styled.input`
+  outline: none;
+  border: none;
+  width: 300px;
+  height: 30px;
+  padding: 20px;
+  margin: 30px;
+`
+
+export { Square, Row, MainGameBoard, Player, PlayerName, Button, ArrowBack }

@@ -137,7 +137,7 @@ class App extends Component {
   render() {
     return (
       <Router >
-        <Route exact path="/TicTacToe/"
+        <Route exact path="/"
           render={() => <PlayerSelect
             onChangePlayerOne={this._onChangePlayerOne}
             onChangePlayerTwo={this._onChangePlayerTwo}

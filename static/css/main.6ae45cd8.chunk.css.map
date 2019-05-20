@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,KACE,aAAc,CACd,SAAU,CACV,uBACF,CACA,KACE,UAAW,CACX,YACF,CACA,GACE,QACF","file":"main.6ae45cd8.chunk.css","sourcesContent":["body {\n  margin: 0 auto;\n  padding: 0;\n  font-family: 'Yantramanav';\n}\n.App {\n  width: 100%;\n  height: 100vh;\n}\nh1 {\n  margin: 0;\n}"]}

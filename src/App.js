@@ -137,14 +137,14 @@ class App extends Component {
   render() {
     return (
       <Router >
-        <Route exact path="/"
+        <Route exact path="/TicTacToe/"
           render={() => <PlayerSelect
             onChangePlayerOne={this._onChangePlayerOne}
             onChangePlayerTwo={this._onChangePlayerTwo}
             playerOne={this.state.playerOne}
             playerTwo={this.state.playerTwo} />}
         />
-        <Route path='/play' render={() =>
+        <Route path='/TicTacToe/play' render={() =>
           <Play
             playerOne={this.state.playerOne}
             playerTwo={this.state.playerTwo}
